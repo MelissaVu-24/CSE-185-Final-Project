@@ -1,7 +1,16 @@
 Description:
-This project tool is aimed to conduct a differential expression analysis on a BLANK dataset that is in the format BLANK. It is supposed to be similar 
+This project tool is aimed to conduct a differential expression analysis on an RSEM dataset that is in the format BLANK. It is supposed to be similar 
 to the Deseq2 tool. The tool will output a file in the format BLANK which includes a log2FoldChange and a P-value column. THe tool also outputs a volcano
 plot visualizing the differentially expressed genes that are upstream and downstream.
 
-How to Use:
+Installation Instructions:
+The tool requires STAR and RSEM. You can install these tools with the command:
+  BLANK
+After installing the necessary libraries, install the tool using:
+  BLANK
+To test that the tool runs use:
+  BLANK
+  
+Basic Usage Instructions:
 1. 
+
