@@ -118,7 +118,7 @@ def main():
     #Poisson probability of all genes
     prob = []
     for i in range(len(meanc)):
-      pr = (meanc[i]**meane[i]) * (math.exp(-meanc[i])) / math.factorial(int(meane[i]))
+    	pr = 1-poisson.cdf(meane[i],meanc[i])
       
     outf.write("\"\",\"baseMean\",\"log2FoldChange\",\"pvalue\"" + "\n")
     for i in range(len(meanc)):
