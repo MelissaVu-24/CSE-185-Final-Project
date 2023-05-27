@@ -50,7 +50,7 @@ def main():
     #filling in the control counts for genes
     track = 0
     linenum = 0
-    for line in inputc:
+    for line in linec:
       if track == 0:
         track = 1
         continue
@@ -64,7 +64,7 @@ def main():
       linenum = 0
       inputc = open(args.RSEMcon[i], "r")
       linec = inputc.readlines()
-      for line in inputc:
+      for line in linec:
         if track == 0:
           track = 1
           continue
@@ -76,7 +76,7 @@ def main():
     track = 0
     linenum = 0
     
-    for line in inpute:
+    for line in linee:
       if track == 0:
         track = 1
         continue
@@ -89,7 +89,7 @@ def main():
       linenum = 0
       inpute = open(args.RSEMexp[i], "r")
       linee = inpute.readlines()
-      for line in inpute:
+      for line in linee:
         if track == 0:
           track = 1
           continue
