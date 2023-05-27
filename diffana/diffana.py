@@ -17,10 +17,10 @@ def main():
     )
       
     # Input controls
-    parser.add_argument("RSEMcon", action = 'append', help="RSEM files", type=str)
+    parser.add_argument("RSEMcon", action = 'append', help="control RSEM files", type=str)
     
     # Input experiments 
-    parser.add_argument("RSEMexp", action = 'append', help="RSEM files", type=str)
+    parser.add_argument("RSEMexp", action = 'append', help="experiment RSEM files", type=str)
       
     # Output
     parser.add_argument("-o", "--out", help="Write output to file." "Default: stdout", metavar="file", type=str, required=False)
