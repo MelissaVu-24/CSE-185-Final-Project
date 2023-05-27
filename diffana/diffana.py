@@ -87,7 +87,7 @@ def main():
     for i in range(1, len(args.RSEMexp)):
       track = 0
       linenum = 0
-      inputc = open(args.RSEMexp[i], "r")
+      inpute = open(args.RSEMexp[i], "r")
       linee = inpute.readlines()
       for line in inpute:
         if track == 0:
