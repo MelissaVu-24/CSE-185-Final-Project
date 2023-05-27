@@ -117,8 +117,7 @@ def main():
 		
 	#Poisson probability of all genes
 	prob = []
-	
-    	for i in range(len(meanc)):
+	for i in range(len(meanc)):
 		pr = 1-poisson.cdf(meane[i],meanc[i])
 		prob.append(pr)
 	logfc =[]
