@@ -38,7 +38,8 @@ def main():
     #input control file2
     inpute = open(args.RSEMexp[0], "r")
     
-    countsc = [len(inputc.readlines())-1][len(args.RSEMcon)]
+    countsc = [len(inputc.readlines())-1]
+    countsss = [len(args.RSEMcon)]
     countse = [len(inpute.readlines())-1][len(args.RSEMexp)]
     name = []
     #filling in the control counts for genes
