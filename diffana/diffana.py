@@ -30,8 +30,9 @@ def main():
 	#output file
 	if args.out is None:
   		outf = sys.stdout
-	else: outf = open(args.out, "w")
-    
+	else: 
+		outf = open(args.out, "w")
+		
 	#input control file1
 	inputc = open(args.RSEMcon[0], "r")
 	#input control file2
@@ -52,7 +53,7 @@ def main():
 	for line in linec:
 		if track == 0:
 			track = 1
-    			continue
+			continue
 		countsc[linenum].append(float(line.split('	')[4]))
 		name.append(line.split('	')[0])
 		linenum+=1
@@ -90,7 +91,7 @@ def main():
 		linee = inpute.readlines()
 		for line in linee:
 			if track == 0:
-			track = 1
+				track = 1
 			continue
 		countse[linenum].append(float(line.split('	')[4]))
 		linenum+=1
