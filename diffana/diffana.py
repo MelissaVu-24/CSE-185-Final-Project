@@ -130,3 +130,6 @@ def main():
     outf.write("\"\",\"baseMean\",\"log2FoldChange\",\"pvalue\"" + "\n")
     for i in range(len(prob)):
         outf.write("\"" + name[i] + "\"," + str(logfc[i])+ "," + str(prob[i]) + "\n")      
+	
+if __name__ == "__main__":
+    main()
