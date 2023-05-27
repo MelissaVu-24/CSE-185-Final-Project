@@ -113,7 +113,7 @@ def main():
       for j in i:
         total = total + j
       mean = total/len(i)
-      meanc.append(mean)
+      meane.append(mean)
 
     #Poisson probability of all genes
     prob = []
