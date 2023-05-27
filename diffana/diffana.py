@@ -58,7 +58,7 @@ def main():
     for i in range(1, len(args.RSEMcon)):
       track = 0
       linenum = 0
-
+      inputc = open(args.RSEMcon[i], "r")
       for line in inputc:
         if track == 0:
           track = 1
@@ -70,6 +70,7 @@ def main():
     #filling in the experiment counts for genes
     track = 0
     linenum = 0
+    
     for line in inpute:
       if track == 0:
         track = 1
@@ -81,7 +82,7 @@ def main():
     for i in range(1, len(args.RSEMexp)):
       track = 0
       linenum = 0
-
+      inputc = open(args.RSEMexp[i], "r")
       for line in inpute:
         if track == 0:
           track = 1
