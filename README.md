@@ -13,11 +13,12 @@ If you do not have root acces, instead use:
   `python setup.py install --user`
  
 access the tool by:
+  'cd ~'
   `cd .local/bin`
   
 To test that the tool runs use:
 
-  `diffana --help`
+  `python diffana --help`
   
 ## Basic Usage Instructions:
 The basic usage is:
@@ -37,6 +38,10 @@ It should produce output like this:
 ```
   
 ## diffana options:
+    
+    *`--RSEMcon`: The Input control file. This option can be called multiple times. At least one file must be entered.
+    
+    *`--RSEMexp`: The Input experimenet file. This option can be called multiple times. At least one file must be entered
 
     *`-o File`, `-out File`:Write the output to a file in the csv form. Default will print to stdout.
     
