@@ -31,7 +31,7 @@ To run diffana on test examples from files in this repo:
   
 It should produce output like this:
 ```
-"","baseMean","log2FoldChange","pvalue"
+"","log2FoldChange","pvalue"
 "ENSMUSG00000000001",-1.218388824925326,1.0
 "ENSMUSG00000000003",0,0.0
 ```
