@@ -30,11 +30,11 @@ To run diffana on test examples from files in this repo:
   `python diffana --RSEMcon ~/1/test1.txt --RSEMcon ~/1/test3.txt --RSEMexp ~/1/test2.txt --RSEMexp ~/1/test4.txt` 
   
 It should produce output like this:
-'''
+```
 "","baseMean","log2FoldChange","pvalue"
 "ENSMUSG00000000001",-1.218388824925326,1.0
 "ENSMUSG00000000003",0,0.0
-'''
+```
   
 ## diffana options:
 
