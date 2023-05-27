@@ -5,9 +5,8 @@ This project tool is aimed to conduct a differential expression analysis on an R
 
 You may install the tool using this way:
 
-  `git clone https://github.com/MelissaVu-24/CSE-185-Final-Project`
-  `cd CSE-185-Final-Project`
-  `python setup.py install`
+  `git clone https://github.com/MelissaVu-24/CSE-185-Final-Project                                                                                                    cd CSE-185-Final-Project
+   python setup.py install`
   
 If you do not have root acces, instead use:
   `python setup.py install --user`
