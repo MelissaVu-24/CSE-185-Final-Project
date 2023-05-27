@@ -7,9 +7,9 @@ You may install the tool using this way:
 ```
 git clone https://github.com/MelissaVu-24/CSE-185-Final-Project
 cd CSE-185-Final-Project
-python setup.py install`
+python setup.py install
 ```  
-If you do not have root acces, instead use:
+If you do not have root access, instead use:
   `python setup.py install --user`
  
 access the tool by:
