@@ -43,7 +43,7 @@ def main():
 
     countsc = []
     countse = []
-    for i in range(len(linec)):
+    for i in range(len(linec)-1):
         countsc.append([])
         countse.append([])
     name = []
