@@ -123,7 +123,7 @@ def main():
     logfc =[]
     for i in range(len(meanc)):
         if(meanc[i] == 0):
-            fc = 1
+            fc = 0
         else:
             fc = math.log2(meane[i]/meanc[i])
         logfc.append(fc)
