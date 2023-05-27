@@ -13,8 +13,10 @@ If you do not have root access, instead use:
   `python setup.py install --user`
  
 access the tool by:
-  'cd ~'
-  `cd .local/bin`
+```
+  cd ~
+  cd .local/bin`
+```
   
 To test that the tool runs use:
 
