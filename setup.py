@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='diffana',
-    version=VERSION,
+    version='0.0.0',
     description='CSE185 Project: Diffana',
     author='Owin Gong and Melissa Vu',
     author_email='mlvu@ucsd.edu',
