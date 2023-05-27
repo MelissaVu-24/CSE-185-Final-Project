@@ -122,4 +122,4 @@ def main():
       
     outf.write("\"\",\"baseMean\",\"log2FoldChange\",\"pvalue\"" + "\n")
     for i in range(len(meanc)):
-      outf.write("\"" + name[i] + "\"," + math.log2(meane[i]/meanc[i]) + "," + prob[i] + "," + "\n")
+      outf.write("\"" + name[i] + "\"," + str(math.log2(meane[i]/meanc[i])) + "," + str(prob[i]) + "," + "\n")
