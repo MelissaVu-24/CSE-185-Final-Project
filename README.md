@@ -1,5 +1,5 @@
 # Diffana CSE 185 Final Project (in progress)
-This project tool is aimed to conduct a differential expression analysis on an RSEM dataset that is in the format *.genes.results of genes for two different conditions. It is supposed to be similar to the Deseq2 tool, where it will compare the datasets of the different conditions to find which genes are differentially expressed. The tool will output a file in the format of .csv which includes a log2FoldChange and a P-value column. The tool also outputs a volcano plot visualizing the differentially expressed genes that are upstream and downstream.
+This project tool is aimed to conduct a differential expression analysis on an RSEM dataset that is in the format *.genes.results of genes for two different conditions. It is supposed to be similar to the Deseq2 tool, where it will compare the datasets of the different conditions to find which genes are differentially expressed. The tool will output a file in the format of .csv which includes a log2FoldChange and a p-value column. The p-value is predicted using Poisson distribution.
 
 ## Installation Instructions:
 
