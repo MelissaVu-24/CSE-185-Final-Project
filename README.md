@@ -1,12 +1,12 @@
-# Diffana CSE 185 Final Project (in progress)
+# Diffana (in progress)
 This project tool is aimed to conduct a differential expression analysis on an RSEM dataset that is in the format *.genes.results of genes for two different conditions. It is supposed to be similar to the Deseq2 tool, where it will compare the datasets of the different conditions to find which genes are differentially expressed. The tool will output a file in the format of .csv which includes a log2FoldChange and a p-value column. The p-value is predicted using Poisson distribution.
 
 ## Installation Instructions:
 
 You may install the tool using this way:
 ```
-git clone https://github.com/MelissaVu-24/CSE-185-Final-Project
-cd CSE-185-Final-Project
+git clone https://github.com/MelissaVu-24/Diffana
+cd Diffana
 python setup.py install
 ```  
 If you do not have root access, instead use:
