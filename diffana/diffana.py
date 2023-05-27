@@ -38,10 +38,14 @@ def main():
     #input control file2
     inpute = open(args.RSEMexp[0], "r")
     
-    print(len(inputc.readlines())-1)
-    print(len(args.RSEMcon))
-    countsc = [len(inputc.readlines())-1]*len(args.RSEMcon)
-    countse = [len(inpute.readlines())-1]*len(args.RSEMexp)
+    linec = inputc.readlines()
+    linee = inpute.readlines()
+
+    countsc = []
+    countse = []
+    for i in range(len(linec)):
+        countsc.append([])
+        countse.append([])
     name = []
     #filling in the control counts for genes
     track = 0
@@ -50,7 +54,7 @@ def main():
       if track == 0:
         track = 1
         continue
-      countsc[linenum].append(line.split('	')[4])
+      countsc[linenum].append(float(line.split('	')[4]))
       name.append(line.split('	')[0])
       linenum+=1
       
@@ -59,11 +63,12 @@ def main():
       track = 0
       linenum = 0
       inputc = open(args.RSEMcon[i], "r")
+      linec = inputc.readlines()
       for line in inputc:
         if track == 0:
           track = 1
           continue
-        countsc[linenum].append(line.split('	')[4])
+        countsc[linenum].append(float(line.split('	')[4]))
         linenum+=1
       inputc.close()
         
@@ -83,6 +88,7 @@ def main():
       track = 0
       linenum = 0
       inputc = open(args.RSEMexp[i], "r")
+      linee = inpute.readlines()
       for line in inpute:
         if track == 0:
           track = 1
