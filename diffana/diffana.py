@@ -40,8 +40,8 @@ def main():
     
     print(len(inputc.readlines())-1)
     print(len(args.RSEMcon))
-    countsc = [len(inputc.readlines())-1][len(args.RSEMcon)]
-    countse = [len(inpute.readlines())-1][len(args.RSEMexp)]
+    countsc = [len(inputc.readlines())-1]*len(args.RSEMcon)
+    countse = [len(inpute.readlines())-1]*len(args.RSEMexp)
     name = []
     #filling in the control counts for genes
     track = 0
