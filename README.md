@@ -28,7 +28,7 @@ The basic usage is:
   
 To run diffana on test examples from files in this repo:
 
-  `python diffana --RSEMcon ~/1/test1.genes.results.txt --RSEMcon ~/1/test3.genes.results.txt --RSEMexp ~/1/test2.genes.results.txt --RSEMexp ~/1/test4.genes.results.txt` 
+  `python diffana --RSEMcon test1.genes.results --RSEMcon test3.genes.results --RSEMexp test2.genes.results --RSEMexp test4.genes.results` 
   
 It should produce output like this:
 ```
