@@ -119,7 +119,14 @@ def main():
     prob = []
     for i in range(len(meanc)):
     	pr = 1-poisson.cdf(meane[i],meanc[i])
-      
-    outf.write("\"\",\"baseMean\",\"log2FoldChange\",\"pvalue\"" + "\n")
+	
+    logfc =[]
     for i in range(len(meanc)):
-      outf.write("\"" + name[i] + "\"," + str(math.log2(meane[i]/meanc[i])) + "," + str(prob[i]) + "," + "\n")
+        if(meanc[i] == 0):
+            fc = 1
+        else:
+            fc = math.log2(meane[i]/meanc[i])
+        logfc.append(fc)
+    outf.write("\"\",\"baseMean\",\"log2FoldChange\",\"pvalue\"" + "\n")
+    for i in range(len(prob)):
+        outf.write("\"" + name[i] + "\"," + str(logfc[i])+ "," + str(prob[i]) + "\n")      
