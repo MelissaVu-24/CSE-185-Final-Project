@@ -8,6 +8,7 @@ import argparse
 import os
 import sys
 import math
+from . import plot as volcano
 from scipy.stats import poisson
 
 def main():
@@ -24,7 +25,8 @@ def main():
 
 	# Output
 	parser.add_argument("-o", "--out", help="Write output to file." "Default: stdout", metavar="file", type=str, required=False)
-
+	parser.add_argument("-vp", help="Plot volcano plot." "Default: stout", metavar="image", type=str, required=False)
+	
 	args = parser.parse_args()
 
 	#output file
@@ -134,6 +136,12 @@ def main():
 		outf.write("\"" + name[i] + "\"," + str(logfc[i])+ "," + str(prob[i]) + "\n")
     
 	outf.close()
+	
+	if args.vp is None:
+		continue
+	else:
+		volcano(name, logfc, prob)
+	
 	sys.exit(0)	
 		   
 if __name__ == "__main__":
