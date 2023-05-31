@@ -25,7 +25,7 @@ def main():
 
 	# Output
 	parser.add_argument("-o", "--out", help="Write output to file." "Default: stdout", metavar="file", type=str, required=False)
-	parser.add_argument("-vp", help="Plot volcano plot." "Default: stout", metavar="image", type=str, required=False)
+	parser.add_argument("-vp", "--vp", help="Plot volcano plot." "Default: stout", metavar="file", type=str, required=False)
 	
 	args = parser.parse_args()
 
