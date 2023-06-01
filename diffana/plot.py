@@ -2,38 +2,51 @@ import pandas as pd
 import matplotlib.pylab as plt
 import seaborn as sns
 import numpy as np
-
-def main():
   
-def volcano(csv):
+def volcano(names, fold_change, pval):
   """
     Parameters
     ----------
-    csv : str
-      Name of csv file diffana.py produces
+    names : str[]
+    fold_change : int[]
+    pval : int[]
+      list of p-values
     Return
     ----------
     Volcano Plot
   """
-  df = pd.read_csv(csv,sep=",",index_col=0)
-  df.head()
-
-  plt.scatter(x=df['log2FoldChange'],y=df['pvalue'].apply(lambda x:-np.log10(x)),s=1)
+  plt.scatter(x=fold_change,y=pval.apply(lambda x:-np.log10(x)),s=1)
 
   # highlight down- or up- regulated genes
-  down = df[(df['log2FoldChange']<=0)]
-  up = df[(df['log2FoldChange']>=0)]
+  down_names[]
+  down_fc[]
+  down_pv[]
+  up_fc[]
+  up_pv[]
+  up_names[]
+  for i in fold_change.len():
+    if fold_change[i] <= 0:
+      down_fc.append(fold_change[i])
+      down_pv.append(pval[i]) 
+      down_names.append(names[i])
+    if fold_change[i] >= 0:
+      up_fc.append(fold_change[i])
+      up_pv.append(pval[i])
+      up_names.append(names[i])
+      
+#   down = df[(df['log2FoldChange']<=0)]
+#   up = df[(df['log2FoldChange']>=0)]
 
-  plt.scatter(x=down['log2FoldChange'],y=down['pvalue'].apply(lambda x:-np.log10(x)),s=3,label="Down-regulated",color="blue")
-  plt.scatter(x=up['log2FoldChange'],y=up['pvalue'].apply(lambda x:-np.log10(x)),s=3,label="Up-regulated",color="red")
+  plt.scatter(x=down_fc,y=down_pv.apply(lambda x:-np.log10(x)),s=3,label="Down-regulated",color="blue")
+  plt.scatter(x=up_fc,y=up_pv.apply(lambda x:-np.log10(x)),s=3,label="Up-regulated",color="red")
   
-  for i,r in down.iterrows():
-      if -np.log10(r['pvalue']) > 20:
-          plt.text(x=r['log2FoldChange'],y=-np.log10(r['pvalue']),s=i,fontdict=dict(color='blue',size=6))
-
-  for i,r in up.iterrows():
-      if -np.log10(r['pvalue']) > 20:
-          plt.text(x=r['log2FoldChange'],y=-np.log10(r['pvalue']),s=i,fontdict=dict(color='red',size=6))
+  for i in down_fc.len():
+    if -np.log10(down_pv[i]) > 20:
+      plt.text(x=down_fc[i],y=-np.log10(down_pv[i]),s=down_names[i],fontdict=dict(color='blue',size=6))
+      
+  for i in up_fc.len():
+    if -np.log10(up_pv[i]) > 20:
+      plt.text(x=up_fc[i],y=-np.log10(up_pv[i]),s=up_names[i],fontdict=dict(color='blue',size=6))
 
   plt.xlabel("log2 fold change")
   plt.ylabel("-log10 pvalue")
@@ -42,7 +55,5 @@ def volcano(csv):
 
   plt.legend()
   
-if __name__ == "__main__":
-  main()
   
   
