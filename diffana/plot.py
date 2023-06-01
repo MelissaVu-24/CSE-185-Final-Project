@@ -33,9 +33,6 @@ def volcano(names, fold_change, pval):
       up_fc.append(fold_change[i])
       up_pv.append(pval[i])
       up_names.append(names[i])
-      
-#   down = df[(df['log2FoldChange']<=0)]
-#   up = df[(df['log2FoldChange']>=0)]
 
   plt.scatter(x=down_fc,y=down_pv.apply(lambda x:-np.log10(x)),s=3,label="Down-regulated",color="blue")
   plt.scatter(x=up_fc,y=up_pv.apply(lambda x:-np.log10(x)),s=3,label="Up-regulated",color="red")
