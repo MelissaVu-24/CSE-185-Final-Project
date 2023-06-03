@@ -130,13 +130,15 @@ def main():
 		else:
 			fc = math.log2(meane[i]/meanc[i])
 		logfc.append(fc)
-    
+    	
+	# outputting the files
 	outf.write("\"\",\"log2FoldChange\",\"pvalue\"" + "\n")
 	for i in range(len(prob)):
 		outf.write("\"" + name[i] + "\"," + str(logfc[i])+ "," + str(prob[i]) + "\n")
     
 	outf.close()
 	
+	# volcano plot, still in progress
 #	if args.vp is None:
 #		continue
 #	else:
