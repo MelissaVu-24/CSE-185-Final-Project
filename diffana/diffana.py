@@ -8,7 +8,7 @@ import argparse
 import os
 import sys
 import math
-from . import utility as volcano
+from . import utility
 from scipy.stats import poisson
 
 def main():
@@ -140,7 +140,7 @@ def main():
 	
 	# volcano plot, still in progress
 	if args.vp is not None:
-		volcano(name, logfc, prob)
+		utility.volcano(name, logfc, prob)
 		
 	
 	sys.exit(0)	
