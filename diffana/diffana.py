@@ -8,7 +8,7 @@ import argparse
 import os
 import sys
 import math
-from . import plot as volcano
+from . import utility as volcano
 from scipy.stats import poisson
 
 def main():
