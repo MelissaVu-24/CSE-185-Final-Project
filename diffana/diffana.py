@@ -139,10 +139,9 @@ def main():
 	outf.close()
 	
 	# volcano plot, still in progress
-	if args.vp is None:
-		continue
-	else:
+	if args.vp is not None:
 		volcano(name, logfc, prob)
+		
 	
 	sys.exit(0)	
 		   
