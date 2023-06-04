@@ -25,7 +25,7 @@ def main():
 
 	# Output
 	parser.add_argument("-o", "--out", help="Write output to file." "Default: stdout", metavar="file", type=str, required=False)
-#	parser.add_argument("-vp", "--vp", help="Plot volcano plot." "Default: stout", metavar="file", type=str, required=False)
+	parser.add_argument("-vp", "--vp", help="Plot volcano plot." "Default: stout", metavar="file", type=str, required=False)
 	
 	args = parser.parse_args()
 
@@ -139,10 +139,10 @@ def main():
 	outf.close()
 	
 	# volcano plot, still in progress
-#	if args.vp is None:
-#		continue
-#	else:
-#		volcano(name, logfc, prob)
+	if args.vp is None:
+		continue
+	else:
+		volcano(name, logfc, prob)
 	
 	sys.exit(0)	
 		   
