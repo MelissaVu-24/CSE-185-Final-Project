@@ -123,11 +123,16 @@ def main():
 	# The variance of the data sets	
 	variancec = []
 	variancee = []
-	for i in countsc:
-		variancec.append(i.var())
+	for i in range(len(countsc)):
+		for j in range(countsc[i]):
+			variance = variance + (countsc[i][j] - meanc[i]) ** 2
+		variancec.append(variance/((len(countsc)-1))
 
-	for i in countse:
-		variancee.append(i.var())
+	for i in range(len(countse)):
+		for j in range(countse[i]):
+			variance = variance + (countse[i][j] - meane[i]) ** 2
+		variancee.append(variance/((len(countse)-1))
+
 		
 	#Filling in the logfc
 	logfc =[]
