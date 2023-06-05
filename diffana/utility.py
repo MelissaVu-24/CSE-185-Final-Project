@@ -75,6 +75,6 @@ def volcano(names, fold_change, pval):
     
     p = (variance - mean)/variance
     r = (mean * mean)/(variance - mean)
-    return p,r
+    return [p,r]
         
     
