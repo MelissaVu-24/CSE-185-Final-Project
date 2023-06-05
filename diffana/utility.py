@@ -73,12 +73,13 @@ def convertParameters(mean, variance):
     n:int
     	the converted binomial distribution parameter(total number of trials)
 	'''
+	print(variance, mean)
 	if variance==0 and mean ==0:
 		return [0,0,0]
 	p = mean/variance
 	r = mean * p /(1-p)
 	n = r/p
-	print([int(p),int(r),int(n)])
-	return [int(p),int(r),int(n)]
+	print([p,int(r),int(n)])
+	return [p,int(r),int(n)]
         
     
