@@ -117,9 +117,11 @@ def main():
 		total = 0
 		for j in i:
 			total = total + j
+		print(mean)
 		mean = total/len(i)
+		priint(mean)
 		meane.append(mean)
-		
+	print(coutse)	
 	# The variance of the data sets	
 	variancec = []
 	variancee = []
