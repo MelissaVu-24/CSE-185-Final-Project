@@ -15,7 +15,7 @@ def volcano(names, fold_change, pval):
 	----------
 	Volcano Plot
 	"""
-	plt.scatter(x=fold_change,y=pval.apply(lambda x:-np.log10(x)),s=1)
+	plt.scatter(x=fold_change,y=pval.apply(lambda x:-np.log10(x)),s=1,label="Not significant")
 	# highlight down- or up- regulated genes
 	size = fold_change.len()
 	down_names[size]
@@ -24,15 +24,16 @@ def volcano(names, fold_change, pval):
 	up_fc[size]
 	up_pv[size]
 	up_names[size]
+	
 	for i in fold_change.len():
 		if fold_change[i] <= 0:
 			down_fc.append(fold_change[i])
 			down_pv.append(pval[i]) 
 			down_names.append(names[i])
-	if fold_change[i] >= 0:
-		up_fc.append(fold_change[i])
-		up_pv.append(pval[i])
-		up_names.append(names[i])
+		if fold_change[i] >= 0:
+			up_fc.append(fold_change[i])
+			up_pv.append(pval[i])
+			up_names.append(names[i])
 
 	plt.scatter(x=down_fc,y=down_pv.apply(lambda x:-np.log10(x)),s=3,label="Down-regulated",color="blue")
 	plt.scatter(x=up_fc,y=up_pv.apply(lambda x:-np.log10(x)),s=3,label="Up-regulated",color="red")
