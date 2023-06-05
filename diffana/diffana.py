@@ -142,9 +142,9 @@ def main():
 	parametersc = []
 	parameterse = []
 	for i in range(len(meanc)):
-		parametersc.appennd(utility.convertParameters(meanc[i], variancec[i])
+		parametersc.append(utility.convertParameters(meanc[i], variancec[i])
 	for i in range(len(meane)):
-		parameterse.appennd(utility.convertParameters(meane[i], variancee[i])
+		parameterse.append(utility.convertParameters(meane[i], variancee[i])
 	for i in range(len(meanc)):
 		pr = nbinom.pmf(1-parameterse[i][1],parameterse[i][1],parameterse[i][0])
 		prob.append(pr)
