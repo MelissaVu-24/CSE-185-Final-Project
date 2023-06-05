@@ -36,7 +36,7 @@ def volcano(names, fold_change, pval):
 			up_names.append(names[i])
 
 	plt.scatter(x=down_fc,y=down_pv,s=3,label="Down-regulated",color="blue")
-    	plt.scatter(x=up_fc,y=up_pv,s=3,label="Up-regulated",color="red")
+ 	plt.scatter(x=up_fc,y=up_pv,s=3,label="Up-regulated",color="red")
   
 	#Label names of differentially expressed genes up- or down regulated
 	for i in range(len(down_fc)):
