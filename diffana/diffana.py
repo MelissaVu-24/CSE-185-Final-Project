@@ -148,12 +148,12 @@ def main():
 	for i in range(len(meanc)):
 		pr = nbinom.pmf(1-parameterse[i][1],parameterse[i][1],parameterse[i][0])
 		prob.append(pr)
-'''				    
+	'''				    
 	#Poisson probability of all genes
 	for i in range(len(meanc)):
 		pr = poisson.pmf(meane[i],meanc[i])
 		prob.append(pr)
-'''   	
+	'''   	
 	
 	# outputting the files
 	outf.write("\"\",\"log2FoldChange\",\"pvalue\"" + "\n")
