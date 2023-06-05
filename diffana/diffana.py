@@ -140,7 +140,7 @@ def main():
 	logfc =[]
 	
 	for i in range(len(meanc)):
-		if(meanc[i] == 0):
+		if(meanc[i] == 0) or meane[i]==0:
 			fc = 0
 		else:
 			fc = math.log2(meane[i]/meanc[i])
