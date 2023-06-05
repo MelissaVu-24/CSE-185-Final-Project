@@ -29,11 +29,11 @@ def volcano(names, fold_change, pval, file):
 		if pval[i] != 'NA':
 			if fold_change[i] <= 0:
 				down_fc.append(fold_change[i])
-				down_pv.append(pval[i]) 
+				down_pv.append(-math.log(pval[i],10)) 
 				down_names.append(names[i])
 			if fold_change[i] >= 0:
 				up_fc.append(fold_change[i])
-				up_pv.append(pval[i])
+				up_pv.append(-math.log(pval[i],10))
 				up_names.append(names[i])
 		else:
 			continue;
