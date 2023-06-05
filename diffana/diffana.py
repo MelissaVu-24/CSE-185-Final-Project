@@ -123,10 +123,10 @@ def main():
 	variancec = []
 	variancee = []
 	for i in countsc:
-		variancee.append(numpy.var(countsc[i]))
+		variancec.append(numpy.var(i))
 
 	for i in countse:
-		variancee.append(numpy.var(countsc[i]))
+		variancee.append(numpy.var(i))
 		
 	#Filling in the logfc
 	logfc =[]
