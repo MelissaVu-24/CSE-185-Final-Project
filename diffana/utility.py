@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pylab as plt
 import seaborn as sns
 import numpy as np
-  
+'''  
 def volcano(names, fold_change, pval):
     """
     Parameters
@@ -52,7 +52,7 @@ def volcano(names, fold_change, pval):
 
     plt.legend()
       
-   
+'''   
  def convertParameters(mean, variance):
     '''
     Parameters
