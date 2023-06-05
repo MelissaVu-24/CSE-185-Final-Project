@@ -54,7 +54,7 @@ def volcano(names, fold_change, pval):
       
 
 def convertParameters(mean, variance):
-    '''
+	'''
     Parameters
     ----------
     mean : int
@@ -70,7 +70,7 @@ def convertParameters(mean, variance):
         
     p: int
         the converted binomial distribution parameter(probability of success)
-    '''
+	'''
 	if variancec==0 and mean ==0:
 		return [0,0]
 	p = (variance - mean)/variance
