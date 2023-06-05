@@ -26,14 +26,15 @@ def volcano(names, fold_change, pval):
 	up_names = []
 	
 	for i in range(size):
-		if fold_change[i] <= 0:
-			down_fc.append(fold_change[i])
-			down_pv.append(pval[i]) 
-			down_names.append(names[i])
-		if fold_change[i] >= 0:
-			up_fc.append(fold_change[i])
-			up_pv.append(pval[i])
-			up_names.append(names[i])
+		if names[i] != 'NA':
+			if fold_change[i] <= 0:
+				down_fc.append(fold_change[i])
+				down_pv.append(pval[i]) 
+				down_names.append(names[i])
+			if fold_change[i] >= 0:
+				up_fc.append(fold_change[i])
+				up_pv.append(pval[i])
+				up_names.append(names[i])
 
 	plt.scatter(x=down_fc,y=down_pv,s=3,label="Down-regulated",color="blue")
 	plt.scatter(x=up_fc,y=up_pv,s=3,label="Up-regulated",color="red")
