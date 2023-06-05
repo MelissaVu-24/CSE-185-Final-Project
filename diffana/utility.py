@@ -3,7 +3,7 @@ import matplotlib.pylab as plt
 import seaborn as sns
 import numpy as np
   
-def volcano(names, fold_change, pval):
+ def volcano(names, fold_change, pval):
   """
     Parameters
     ----------
@@ -52,3 +52,23 @@ def volcano(names, fold_change, pval):
   plt.axhline(2,color="grey",linestyle="--")
 
   plt.legend()
+
+ def dispersionCalc(mean, variance):
+    '''
+    Parameters
+    ----------
+    mean : int
+        the mean of the control dataset
+        
+    variant : int
+        the variance of the control dataset
+        
+    Returns
+    ----------
+    dispersion: int
+        the calculated dispersion 
+    '''
+    dispersion = mean * mean /(variance/mean)
+    return dispersion
+        
+    
