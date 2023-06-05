@@ -122,6 +122,7 @@ def main():
 		print(mean)
 		meane.append(mean)
 	print(coutse)	
+	print(meane)
 	# The variance of the data sets	
 	variancec = []
 	variancee = []
