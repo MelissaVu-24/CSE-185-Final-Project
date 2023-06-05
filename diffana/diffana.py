@@ -9,6 +9,7 @@ import os
 import sys
 import math
 import numpy
+import pandas
 from . import utility
 from scipy.stats import poisson
 from scipy.stats import nbinom
@@ -123,10 +124,10 @@ def main():
 	variancec = []
 	variancee = []
 	for i in countsc:
-		variancec.append(numpy.var(i))
+		variancec.append(pandas.var(i))
 
 	for i in countse:
-		variancee.append(numpy.var(i))
+		variancee.append(pandas.var(i))
 		
 	#Filling in the logfc
 	logfc =[]
