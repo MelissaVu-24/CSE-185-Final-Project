@@ -53,7 +53,7 @@ def volcano(names, fold_change, pval):
     plt.legend()
       
 '''   
- def convertParameters(mean, variance):
+def convertParameters(mean, variance):
     '''
     Parameters
     ----------
