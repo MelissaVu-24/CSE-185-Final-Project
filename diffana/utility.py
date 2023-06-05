@@ -17,9 +17,11 @@ def volcano(names, fold_change, pval, file):
 	"""
 	size = len(fold_change)
 	for i in range(size):
-		if pval[i] == 'NA':
-			fold_change.pop(i)
-			pval.pop(i)
+		count = 0
+		if pval[i-count] == 'NA':
+			fold_change.pop(i-count)
+			pval.pop(i-count)
+			count=count+1
 	plt.scatter(x=fold_change,y=pval,s=1)
 	# highlight down- or up- regulated genes
 	size = len(fold_change)
