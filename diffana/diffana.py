@@ -158,7 +158,7 @@ def main():
 		else:
 			#Poisson probability of genes
 			if meanc[i] ==0 and variancec[i]==0:
-				prob.append(NA)
+				prob.append('NA')
 				continue
 			pr = 1 - poisson.cdf(meane[i],meanc[i])
 			prob.append(pr)
