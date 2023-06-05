@@ -73,8 +73,8 @@ def convertParameters(mean, variance):
 	'''
 	if variance==0 and mean ==0:
 		return [0,0]
-	p = (variance - mean)/variance
-	r = (mean * mean)/(variance - mean)
+	p = mean/variance
+	n = mean * p /(1-p)
 	return [int(p),int(r)]
         
     
