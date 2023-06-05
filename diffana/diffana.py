@@ -160,7 +160,7 @@ def main():
 			for i in range(len(meanc)):
 				pr = 1 - poisson.cdf(meane[i],meanc[i])
 				prob.append(pr)
-		'  	
+	
 	
 	# outputting the files
 	outf.write("\"\",\"log2FoldChange\",\"pvalue\"" + "\n")
