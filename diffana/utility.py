@@ -71,11 +71,10 @@ def convertParameters(mean, variance):
     p: int
         the converted binomial distribution parameter(probability of success)
     '''
-
-    if variancec==0 and mean ==0:
-	return [0,0]
-    p = (variance - mean)/variance
-    r = (mean * mean)/(variance - mean)
-    return [int(p),int(r)]
+	if variancec==0 and mean ==0:
+		return [0,0]
+	p = (variance - mean)/variance
+	r = (mean * mean)/(variance - mean)
+	return [int(p),int(r)]
         
     
