@@ -146,6 +146,8 @@ def main():
 	for i in range(len(meane)):
 		parameterse.append(utility.convertParameters(meane[i], variancee[i]))
 	for i in range(len(meanc)):
+		if (parameterse[i]) == [0, 0]:
+			continue
 		pr = nbinom.pmf(1-parameterse[i][1],parameterse[i][1],parameterse[i][0])
 		prob.append(pr)
 	'''				    
