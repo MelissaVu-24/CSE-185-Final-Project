@@ -145,25 +145,22 @@ def main():
 			fc = math.log2(meane[i]/meanc[i])
 		logfc.append(fc)
 	prob = []
-	#Negative Binomial Distribution probability of all genes
-	parametersc = []
-	parameterse = []
 	for i in range(len(meanc)):
-		parametersc.append(utility.convertParameters(meanc[i], variancec[i]))
-	for i in range(len(meane)):
-		parameterse.append(utility.convertParameters(meane[i], variancee[i]))
-	for i in range(len(meanc)):
-		if (parameterse[i]) == [0, 0]:
-			prob.append(NA)
-			continue
-		pr = nbinom.cdf(parameterse[i][2] - parameterse[i][1],parameterse[i][1],parametersc[i][0])
-		prob.append(pr)
-	'''				    
-	#Poisson probability of all genes
-	for i in range(len(meanc)):
-		pr = poisson.pmf(meane[i],meanc[i])
-		prob.append(pr)
-	'''   	
+		if meanc[i] < variancec[i] and meane[i] < variancee[i]:
+			#Negative Binomial Distribution probability of all genes
+			parametersc = utility.convertParameters(meanc[i], variancec[i])
+			parameterse = utility.convertParameters(meane[i], variancee[i])
+			if (parameterse) == [0, 0, 0] or (parametersc) == [0, 0, 0]:
+				prob.append(NA)
+				continue
+			pr = 1 - nbinom.cdf(parameterse[2] - parameterse[1],parameterse[1],parametersc[0])
+			prob.append(pr)
+		else:
+			#Poisson probability of genes
+			for i in range(len(meanc)):
+				pr = 1 - poisson.cdf(meane[i],meanc[i])
+				prob.append(pr)
+		'  	
 	
 	# outputting the files
 	outf.write("\"\",\"log2FoldChange\",\"pvalue\"" + "\n")
