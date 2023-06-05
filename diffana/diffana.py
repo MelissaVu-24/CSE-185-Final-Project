@@ -174,7 +174,7 @@ def main():
 	
 	# volcano plot, still in progress
 	if args.vp is not None:
-		utility.volcano(name, logfc, prob)
+		utility.volcano(name, logfc, prob, args.vp)
 		
 	
 	sys.exit(0)	
