@@ -15,14 +15,7 @@ def volcano(names, fold_change, pval, file):
 	----------
 	Volcano Plot
 	"""
-	size = len(fold_change)
-	for i in range(size):
-		count = 0
-		if pval[i-count] == 'NA':
-			fold_change.pop(i-count)
-			pval.pop(i-count)
-			count=count+1
-	plt.scatter(x=fold_change,y=pval,s=1)
+	
 	# highlight down- or up- regulated genes
 	size = len(fold_change)
 	down_names = []
@@ -44,7 +37,6 @@ def volcano(names, fold_change, pval, file):
 				up_names.append(names[i])
 		else:
 			continue;
-
 	plt.scatter(x=down_fc,y=down_pv,s=3,label="Down-regulated",color="blue")
 	plt.scatter(x=up_fc,y=up_pv,s=3,label="Up-regulated",color="red")
   
