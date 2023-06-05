@@ -149,7 +149,7 @@ def main():
 		if (parameterse[i]) == [0, 0]:
 			prob.append(1)
 			continue
-		pr = nbinom.pmf(1-parameterse[i][1],parameterse[i][1],parameterse[i][0])
+		pr = nbinom.cdf(1-parameterse[i][1],parameterse[i][1],parameterse[i][0])
 		prob.append(pr)
 	'''				    
 	#Poisson probability of all genes
