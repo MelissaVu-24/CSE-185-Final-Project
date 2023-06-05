@@ -25,10 +25,10 @@ def volcano(names, fold_change, pval):
 	up_pv[size]
 	up_names[size]
 	for i in fold_change.len():
-	if fold_change[i] <= 0:
-		down_fc.append(fold_change[i])
-		down_pv.append(pval[i]) 
-		down_names.append(names[i])
+		if fold_change[i] <= 0:
+			down_fc.append(fold_change[i])
+			down_pv.append(pval[i]) 
+			down_names.append(names[i])
 	if fold_change[i] >= 0:
 		up_fc.append(fold_change[i])
 		up_pv.append(pval[i])
