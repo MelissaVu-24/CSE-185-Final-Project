@@ -38,12 +38,12 @@ def volcano(names, fold_change, pval):
 	plt.scatter(x=up_fc,y=up_pv.apply(lambda x:-np.log10(x)),s=3,label="Up-regulated",color="red")
   
 	for i in down_fc.len():
-	if -np.log10(down_pv[i]) > 20:
-		plt.text(x=down_fc[i],y=-np.log10(down_pv[i]),s=down_names[i],fontdict=dict(color='blue',size=6))
+		if -np.log10(down_pv[i]) > 20:
+			plt.text(x=down_fc[i],y=-np.log10(down_pv[i]),s=down_names[i],fontdict=dict(color='blue',size=6))
       
 	for i in up_fc.len():
 		if -np.log10(up_pv[i]) > 20:
-		plt.text(x=up_fc[i],y=-np.log10(up_pv[i]),s=up_names[i],fontdict=dict(color='blue',size=6))
+			plt.text(x=up_fc[i],y=-np.log10(up_pv[i]),s=up_names[i],fontdict=dict(color='blue',size=6))
 
 	plt.xlabel("log2 fold change")
 	plt.ylabel("-log10 pvalue")
