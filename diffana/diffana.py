@@ -126,12 +126,12 @@ def main():
 	for i in range(len(countsc)):
 		for j in range(len(countsc[i])):
 			variance = variance + (countsc[i][j] - meanc[i]) ** 2
-		variancec.append(variance/((len(countsc)-1))
+		variancec.append(variance/((len(countsc)-1)))
 
 	for i in range(len(countse)):
 		for j in range(len(countse[i])):
 			variance = variance + (countse[i][j] - meane[i]) ** 2
-		variancee.append(variance/((len(countse)-1))
+		variancee.append(variance/((len(countse)-1)))
 
 		
 	#Filling in the logfc
