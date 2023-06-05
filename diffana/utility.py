@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pylab as plt
 import seaborn as sns
 import numpy as np
+import math
 
 def volcano(names, fold_change, pval, file):
 	"""
