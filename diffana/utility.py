@@ -3,7 +3,7 @@ import matplotlib.pylab as plt
 import seaborn as sns
 import numpy as np
 
-def volcano(names, fold_change, pval):
+def volcano(names, fold_change, pval, file):
 	"""
 	Parameters
 	----------
@@ -61,7 +61,7 @@ def volcano(names, fold_change, pval):
 	plt.axhline(2,color="grey",linestyle="--")
 
 	plt.legend()
-      
+	plt.savefig(file)
 
 def convertParameters(mean, variance):
 	'''
