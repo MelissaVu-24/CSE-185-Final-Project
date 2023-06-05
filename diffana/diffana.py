@@ -157,9 +157,11 @@ def main():
 			prob.append(pr)
 		else:
 			#Poisson probability of genes
-			for i in range(len(meanc)):
-				pr = 1 - poisson.cdf(meane[i],meanc[i])
-				prob.append(pr)
+			if meanc[i] ==0 and variancec[i]==0:
+				prob.append(NA)
+				continue
+			pr = 1 - poisson.cdf(meane[i],meanc[i])
+			prob.append(pr)
 	
 	
 	# outputting the files
