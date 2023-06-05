@@ -8,8 +8,10 @@ import argparse
 import os
 import sys
 import math
+import numpy
 from . import utility
 from scipy.stats import poisson
+from scipy.stats import nbinom
 
 def main():
 	parser = argparse.ArgumentParser(
@@ -117,11 +119,16 @@ def main():
 		mean = total/len(i)
 		meane.append(mean)
 		
-	#Poisson probability of all genes
-	prob = []
-	for i in range(len(meanc)):
-		pr = 1-poisson.cdf(meane[i],meanc[i])
-		prob.append(pr)
+	# The variance of the data sets	
+	variancec = []
+	variancee = []
+	for i in countsc:
+		variancee.append(numpy.var(countsc[i]))
+
+	for i in countse:
+		variancee.append(numpy.var(countsc[i]))
+		
+	#Filling in the logfc
 	logfc =[]
 	
 	for i in range(len(meanc)):
@@ -130,7 +137,24 @@ def main():
 		else:
 			fc = math.log2(meane[i]/meanc[i])
 		logfc.append(fc)
-    	
+	prob = []
+	#Negative Binomial Distribution probability of all genes
+	parametersc = []
+	parameterse = []
+	for i in range(len(meanc)):
+		parametersc.appennd(utility.convertParameters(meanc[i], variancec[i])
+	for i in range(len(meane)):
+		parameterse.appennd(utility.convertParameters(meane[i], variancee[i])
+	for i in range(len(meanc)):
+		pr = nbinom.pmf(1-parameterse[i][1],parameterse[i][1],parameterse[i][0])
+		prob.append(pr)
+'''				    
+	#Poisson probability of all genes
+	for i in range(len(meanc)):
+		pr = poisson.pmf(meane[i],meanc[i])
+		prob.append(pr)
+'''   	
+	
 	# outputting the files
 	outf.write("\"\",\"log2FoldChange\",\"pvalue\"" + "\n")
 	for i in range(len(prob)):
