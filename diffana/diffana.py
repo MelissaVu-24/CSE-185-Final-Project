@@ -124,10 +124,10 @@ def main():
 	variancec = []
 	variancee = []
 	for i in countsc:
-		variancec.append(pandas.var(i))
+		variancec.append(i.var())
 
 	for i in countse:
-		variancee.append(pandas.var(i))
+		variancee.append(i.var())
 		
 	#Filling in the logfc
 	logfc =[]
