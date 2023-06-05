@@ -147,9 +147,9 @@ def main():
 		parameterse.append(utility.convertParameters(meane[i], variancee[i]))
 	for i in range(len(meanc)):
 		if (parameterse[i]) == [0, 0]:
-			prob.append(1)
+			prob.append(NA)
 			continue
-		pr = nbinom.cdf(1-parameterse[i][1],parameterse[i][1],parameterse[i][0])
+		pr = nbinom.cdf(parameterse[i][2] - parameterse[i][1],parameterse[i][1],parametersc[i][0])
 		prob.append(pr)
 	'''				    
 	#Poisson probability of all genes
