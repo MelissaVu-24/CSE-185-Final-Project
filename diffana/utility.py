@@ -78,6 +78,7 @@ def convertParameters(mean, variance):
 	p = mean/variance
 	r = mean * p /(1-p)
 	n = r/p
+	print([int(p),int(r),int(n)])
 	return [int(p),int(r),int(n)]
         
     
