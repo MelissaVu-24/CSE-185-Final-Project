@@ -121,7 +121,7 @@ def main():
 		mean = total/len(i)
 		print(mean)
 		meane.append(mean)
-	print(coutse)	
+	print(countse)	
 	print(meane)
 	# The variance of the data sets	
 	variancec = []
