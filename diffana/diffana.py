@@ -124,12 +124,12 @@ def main():
 	variancec = []
 	variancee = []
 	for i in range(len(countsc)):
-		for j in range(countsc[i]):
+		for j in range(len(countsc[i])):
 			variance = variance + (countsc[i][j] - meanc[i]) ** 2
 		variancec.append(variance/((len(countsc)-1))
 
 	for i in range(len(countse)):
-		for j in range(countse[i]):
+		for j in range(len(countse[i])):
 			variance = variance + (countse[i][j] - meane[i]) ** 2
 		variancee.append(variance/((len(countse)-1))
 
