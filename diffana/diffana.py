@@ -98,9 +98,9 @@ def main():
 			if track == 0:
 				track = 1
 			continue
-		countse[linenum].append(float(line.split('	')[4]))
-		linenum+=1
-		inpute.close()
+			countse[linenum].append(float(line.split('	')[4]))
+			linenum+=1
+			inpute.close()
     
 	# The mean counts for the two data sets
 	meanc = []
@@ -117,12 +117,10 @@ def main():
 		total = 0
 		for j in i:
 			total = total + j
-		print(total)
+
 		mean = total/len(i)
-		print(mean)
 		meane.append(mean)
-	print(countse)	
-	print(meane)
+		
 	# The variance of the data sets	
 	variancec = []
 	variancee = []
@@ -163,7 +161,6 @@ def main():
 			if meanc[i] ==0 and variancec[i]==0:
 				prob.append('NA')
 				continue
-			print(meanc[i], meane[i])
 			pr = 1 - poisson.cdf(6,2.6)
 			prob.append(pr)
 	
