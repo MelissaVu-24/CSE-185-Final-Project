@@ -88,7 +88,7 @@ def main():
 		linenum+=1
       
 	inpute.close()
-	for i in range(1, len(args.RSEMex[)):
+	for i in range(1, len(args.RSEMexp)):
 		track = 0
 		linenum = 0
 		inpute = open(args.RSEMexp[i], "r")
