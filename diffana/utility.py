@@ -98,9 +98,12 @@ def sizeFactor(counts):
 		total.append(product ** (1/len(gene)))
 	for j in range(len(counts[0])):	
 		rooc = []
-		for i in range(len(counts)):
-			rooc.append(counts[i][j]/total[i])
-		sizefactor.append(statistics.median(rooc))
+		if(total[i] == 0):
+			rooc.append[1]
+		else:
+			for i in range(len(counts)):
+				rooc.append(counts[i][j]/total[i])
+			sizefactor.append(statistics.median(rooc))
 	return sizefactor
 			
 def meanCond(sizefactor, counts):
