@@ -80,7 +80,6 @@ def main():
 	#filling in the experiment counts for genes
 	track = 0
 	linenum = 0
-    
 	for line in linee:
 		if track == 0:
 			track = 1
@@ -89,7 +88,7 @@ def main():
 		linenum+=1
       
 	inpute.close()
-	for i in range(1, len(args.RSEMexp)):
+	for i in range(1, len(args.RSEMex[)):
 		track = 0
 		linenum = 0
 		inpute = open(args.RSEMexp[i], "r")
@@ -97,7 +96,7 @@ def main():
 		for line in linee:
 			if track == 0:
 				track = 1
-			continue
+				continue
 			countse[linenum].append(float(line.split('	')[4]))
 			linenum+=1
 		inpute.close()
