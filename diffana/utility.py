@@ -122,7 +122,7 @@ def varCond(sizefactor, counts, mean):
 		ztotal = 0
 		for j in range(len(counts[i])):
 			wtotal = wtotal + (counts[i][j]/sizefactor[i] - mean[i]) ** 2
-			ztotal = ztotal + (1/sizefactor[i])
+			ztotal = ztotal + (1/sizefactor[j])
 		w.append(wtotal/(len(counts[i])-1))
 		z.append(mean[i] * ztotal/(len(counts[i])))
 	localvar = []
