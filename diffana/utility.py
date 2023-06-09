@@ -3,6 +3,7 @@ import matplotlib.pylab as plt
 import seaborn as sns
 import numpy as np
 import math
+import statistics
 
 def volcano(names, fold_change, pval, file):
 	"""
@@ -87,4 +88,43 @@ def convertParameters(mean, variance):
 	print([p,int(r),int(n)])
 	return [p,int(r),int(n)]
         
-    
+ def sizeFactor(counts):
+	sizefactor = []
+	total = []
+	for gene in counts:
+		product = 1
+		for sample in gene:
+			product = product * sample
+		total.append(product ** (1/len(gene)))
+	for j in range(len(counts[0])):	
+		rooc = []
+		for i in range(len(counts)):
+			rooc.append(counts[i][j]/total[i])
+		sizefactor.append(statistics.median(rooc))
+	return sizefactor
+			
+def meanCond(sizefactor, counts):
+	mean = []
+	for gene in counts:
+		total = 0
+		for i in range(len(gene)):
+			total = total + gene[i]/sizefactor[i]
+		mean.append(total/len(gene))
+	return mean
+			
+def varCond(sizefactor, counts, mean):
+	w = []
+	z = []
+	for i in range(len(counts)):
+		wtotal = 0
+		ztotal = 0
+		for j in range(len(counts[i])):
+			wtotal = wtotal + (counts[i][j]/sizefactor[i] - mean[i]) ** 2
+			ztotal = ztotal + (1/sizefactor[i])
+		w.append(wtotal/(len(counts[i])-1))
+		z.append(mean[i] * ztotal/(len(counts[i])))
+	var = []
+	for i in range(len(w)):
+		var.append(w[i]-z[i])
+	return var		
+		
