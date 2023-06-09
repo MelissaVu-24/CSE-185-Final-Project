@@ -157,10 +157,10 @@ def main():
 	
 	
 	for i in range(len(samplevarc[1])):
-		if samplevarc[1] < samplevarc[0] and samplevare[1] < samplevare[0]:
+		if samplevarc[1][i] < samplevarc[0][i] and samplevare[1][i] < samplevare[0][i]:
 			#Negative Binomial Distribution probability of all genes
-			parametersc = utility.convertParameters(samplevarc[1], samplevarc[0])
-			parameterse = utility.convertParameters(samplevare[1], samplevare[0])
+			parametersc = utility.convertParameters(samplevarc[1][i], samplevarc[0][i])
+			parameterse = utility.convertParameters(samplevare[1][i], samplevare[0][i])
 			if (parameterse) == [0, 0, 0] or (parametersc) == [0, 0, 0]:
 				prob.append('NA')
 				continue
