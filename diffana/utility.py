@@ -107,6 +107,7 @@ def sizeFactor(counts):
 	return sizefactor
 			
 def meanCond(sizefactor, counts):
+	print(counts)
 	mean = []
 	for gene in counts:
 		total = 0
