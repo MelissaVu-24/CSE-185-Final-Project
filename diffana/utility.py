@@ -88,7 +88,7 @@ def convertParameters(mean, variance):
 	print([p,int(r),int(n)])
 	return [p,int(r),int(n)]
         
- def sizeFactor(counts):
+def sizeFactor(counts):
 	sizefactor = []
 	total = []
 	for gene in counts:
