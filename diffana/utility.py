@@ -83,7 +83,7 @@ def convertParameters(mean, variance):
 	if variance==0 and mean ==0:
 		return [0,0,0]
 	p = mean/variance
-	r = mean * p /(1-p)
+	r = (mean **2)/(variance-mean)
 	n = r/p
 	print([p,int(r),int(n)])
 	return [p,int(r),int(n)]
@@ -123,8 +123,23 @@ def varCond(sizefactor, counts, mean):
 			ztotal = ztotal + (1/sizefactor[i])
 		w.append(wtotal/(len(counts[i])-1))
 		z.append(mean[i] * ztotal/(len(counts[i])))
+	localvar = []
+	for i in range(len(w)):
+		localvar.append(w[i]-z[i])
 	var = []
 	for i in range(len(w)):
 		var.append(w[i]-z[i])
 	return var		
-		
+
+def sampleVar(sizefactor, mean, variance):
+	sampleVar = []
+	sampleMean = []
+	for i in range(len(mean)):
+		sampleMean.append(mean[i] * len(sizefactor))
+		var = mean[i] * len(sizefactor)
+		for j in range(sizefactor):
+			var = var + (sizefactor[j]**2) * variance[i]
+		sampleVar.append(var)
+	return [sampleVar, sampleMean]
+	
+			
