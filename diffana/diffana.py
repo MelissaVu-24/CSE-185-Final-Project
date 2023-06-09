@@ -105,8 +105,8 @@ def main():
 	# The mean counts for the two data sets
 	sizefactorc = utility.sizeFactor(countsc)
 	sizefactore = utility.sizeFactor(countse)
-	meancondc =  utility.sizeFactor(sizefactorc, countsc)
-	meanconde =  utility.sizeFactor(sizefactore, countse)
+	meancondc =  utility.meanCond(sizefactorc, countsc)
+	meanconde =  utility.meanCond(sizefactore, countse)
 	'''    
 	for i in countsc:
 		total = 0
