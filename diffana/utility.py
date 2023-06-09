@@ -79,13 +79,11 @@ def convertParameters(mean, variance):
     n:int
     	the converted binomial distribution parameter(total number of trials)
 	'''
-	print(variance, mean)
 	if variance==0 and mean ==0:
 		return [0,0,0]
 	p = mean/variance
 	r = (mean **2)/(variance-mean)
 	n = r/p
-	print([p,int(r),int(n)])
 	return [p,int(r),int(n)]
         
 def sizeFactor(counts):
@@ -107,7 +105,7 @@ def sizeFactor(counts):
 	return sizefactor
 			
 def meanCond(sizefactor, counts):
-	print(counts)
+
 	mean = []
 	for gene in counts:
 		total = 0
@@ -125,7 +123,6 @@ def varCond(sizefactor, counts, mean):
 		for j in range(len(counts[i])):
 			wtotal = wtotal + (counts[i][j]/sizefactor[i] - mean[i]) ** 2
 			ztotal = ztotal + (1/sizefactor[i])
-		print(counts[i])
 		w.append(wtotal/(len(counts[i])-1))
 		z.append(mean[i] * ztotal/(len(counts[i])))
 	localvar = []
