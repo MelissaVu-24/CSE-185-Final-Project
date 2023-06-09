@@ -75,7 +75,7 @@ def main():
 				continue
 			countsc[linenum].append(float(line.split('	')[4]))
 			linenum+=1
-			inputc.close()
+		inputc.close()
         
 	#filling in the experiment counts for genes
 	track = 0
@@ -100,7 +100,7 @@ def main():
 			continue
 			countse[linenum].append(float(line.split('	')[4]))
 			linenum+=1
-			inpute.close()
+		inpute.close()
 	print(countse)
 	print(countsc)
 	# The mean counts for the two data sets
