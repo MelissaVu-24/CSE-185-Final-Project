@@ -100,7 +100,7 @@ def sizeFactor(counts):
 		rooc = []
 		for i in range(len(counts)):
 			if(total[i] == 0):
-				rooc.append[1]
+				rooc.append(1)
 			else:
 				rooc.append(counts[i][j]/total[i])
 		sizefactor.append(statistics.median(rooc))
