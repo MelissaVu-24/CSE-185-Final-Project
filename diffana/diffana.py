@@ -103,9 +103,11 @@ def main():
 			inpute.close()
     
 	# The mean counts for the two data sets
-	meanc = []
-	meane = []
-    
+	sizefactorc = utility.sizeFactor(countsc)
+	sizefactore = utility.sizeFactor(countse)
+	meancondc =  utility.sizeFactor(sizefactorc, countsc)
+	meanconde =  utility.sizeFactor(sizefactore, countse)
+'''    
 	for i in countsc:
 		total = 0
 		for j in i:
@@ -120,10 +122,12 @@ def main():
 
 		mean = total/len(i)
 		meane.append(mean)
-		
+'''		
 	# The variance of the data sets	
-	variancec = []
-	variancee = []
+	variancec = utility.varCond(sizefactorc, countsc, meanc)
+	variancee = utility.varCond(sizefactore, countse, meane)
+
+'''
 	for i in range(len(countsc)):
 		variance = 0
 		for j in range(len(countsc[i])):
@@ -135,7 +139,7 @@ def main():
 			variance = variance + (countse[i][j] - meane[i]) ** 2
 		variancee.append(variance/((len(countse)-1)))
 
-		
+'''		
 	#Filling in the logfc
 	logfc =[]
 	
@@ -145,14 +149,20 @@ def main():
 		else:
 			fc = math.log2(meane[i]/meanc[i])
 		logfc.append(fc)
+		
+	#calculating the condition mean and variance
+	samplevarc = utility.sampleVar(sizefactorc, meanc, variancec)
+	samplevare = utility.sampleVar(sizefactore, meane, variancee)
 	prob = []
-	for i in range(len(meanc)):
-		if meanc[i] < variancec[i] and meane[i] < variancee[i]:
+	
+	
+	for i in range(len(samplevarc[1])):
+		if samplevarc[1] < samplevarc[0] and samplevare[1] < samplevare[0]:
 			#Negative Binomial Distribution probability of all genes
-			parametersc = utility.convertParameters(meanc[i], variancec[i])
-			parameterse = utility.convertParameters(meane[i], variancee[i])
+			parametersc = utility.convertParameters(samplevarc[1], samplevarc[0])
+			parameterse = utility.convertParameters(samplevare[1], samplevare[0])
 			if (parameterse) == [0, 0, 0] or (parametersc) == [0, 0, 0]:
-				prob.append(NA)
+				prob.append('NA')
 				continue
 			pr = 1 - nbinom.cdf(parameterse[2] - parameterse[1],parameterse[1],parametersc[0])
 			prob.append(pr)
