@@ -101,7 +101,7 @@ def main():
 			countse[linenum].append(float(line.split('	')[4]))
 			linenum+=1
 			inpute.close()
-    	print(countse)
+	print(countse)
 	print(countsc)
 	# The mean counts for the two data sets
 	sizefactorc = utility.sizeFactor(countsc)
