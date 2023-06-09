@@ -107,7 +107,7 @@ def main():
 	sizefactore = utility.sizeFactor(countse)
 	meancondc =  utility.sizeFactor(sizefactorc, countsc)
 	meanconde =  utility.sizeFactor(sizefactore, countse)
-'''    
+	'''    
 	for i in countsc:
 		total = 0
 		for j in i:
@@ -122,12 +122,12 @@ def main():
 
 		mean = total/len(i)
 		meane.append(mean)
-'''		
+	'''		
 	# The variance of the data sets	
 	variancec = utility.varCond(sizefactorc, countsc, meanc)
 	variancee = utility.varCond(sizefactore, countse, meane)
 
-'''
+	'''
 	for i in range(len(countsc)):
 		variance = 0
 		for j in range(len(countsc[i])):
@@ -139,7 +139,7 @@ def main():
 			variance = variance + (countse[i][j] - meane[i]) ** 2
 		variancee.append(variance/((len(countse)-1)))
 
-'''		
+	'''		
 	#Filling in the logfc
 	logfc =[]
 	
