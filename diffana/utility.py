@@ -142,7 +142,7 @@ def sampleVar(sizefactor, mean, variance):
 	for i in range(len(mean)):
 		sampleMean.append(mean[i] * len(sizefactor))
 		var = mean[i] * len(sizefactor)
-		for j in range(sizefactor):
+		for j in range(len(sizefactor)):
 			var = var + (sizefactor[j]**2) * variance[i]
 		sampleVar.append(var)
 	return [sampleVar, sampleMean]
