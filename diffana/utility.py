@@ -66,7 +66,7 @@ def error(msg):
 	   the error to be printed
 	"""
 	
-	sys.stderr.write("ERROR: " +  "{msg}\n")
+	sys.stderr.write("ERROR: " +  "{" + msg} + "\n")
 	sys.exit(1)
 	
 def convertParameters(mean, variance):
