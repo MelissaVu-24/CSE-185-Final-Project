@@ -60,7 +60,7 @@ def volcano(names, fold_change, pval, file):
 	plt.legend()
 	plt.savefig(file)
 	
-def ERROR(msg):
+def error(msg):
 	"""
 	Prints the error message if there is a wrong entry
 
