@@ -34,9 +34,16 @@ def main():
 
 	#output file
 	if args.out is None:
+		if 
   		outf = sys.stdout
 	else: 
 		outf = open(args.out, "w")
+		
+	#checks for the entry
+	if len(args.RSEMcon) < 2:
+		utility.error("there needs to be at least 2 samples for RSEMcon")
+	if len(args.RSEMexp) < 2:
+		utility.error("there needs to be at least 2 samples for RSEMexp")
 		
 	#input control file1
 	inputc = open(args.RSEMcon[0], "r")
