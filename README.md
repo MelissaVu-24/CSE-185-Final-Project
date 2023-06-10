@@ -9,6 +9,7 @@ git clone https://github.com/MelissaVu-24/Diffana
 cd Diffana
 python setup.py install
 ```  
+You can also manually download the package
 If you do not have root access, instead use:
   `python setup.py install --user`
 
