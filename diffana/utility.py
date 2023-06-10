@@ -100,7 +100,7 @@ def convertParameters(mean, variance):
 	p = mean/variance
 	r = (mean **2)/(variance-mean)
 	n = r/p
-	return [p,int(r),int(n)]
+	return [p,round(r),round(n)]
         
 def sizeFactor(counts):
 	'''
