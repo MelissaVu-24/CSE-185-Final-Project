@@ -1,1 +1,1 @@
-
+time python diffana --RSEMcon ~/Diffana/tests/Real_Data/Normal_vs_Western_Diet/ND_F_Rep2.genes.results --RSEMcon ~/Diffana/tests/Real_Data/Normal_vs_Western_Diet/ND_M_Rep3.genes.results --RSEMcon ~/Diffana/tests/Real_Data/Normal_vs_Western_Diet/ND_M_Rep4.genes.results --RSEMexp ~/Diffana/tests/Real_Data/Normal_vs_Western_Diet/WD_F_Rep2.genes.results --RSEMexp ~/Diffana/tests/Real_Data/Normal_vs_Western_Diet/WD_M_Rep3.genes.results --RSEMexp ~/Diffana/tests/Real_Data/Normal_vs_Western_Diet/WD_M_Rep4.genes.results -o ~/ND_vs_WDTest
