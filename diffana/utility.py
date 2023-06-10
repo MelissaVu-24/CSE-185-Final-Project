@@ -40,17 +40,17 @@ def volcano(names, fold_change, pval, file):
 				up_names.append(names[i])
 		else:
 			continue;
-	plt.scatter(x=down_fc,y=-np.log10(down_pv),s=3,label="Down-regulated",color="blue")
-	plt.scatter(x=up_fc,y=-np.log10(up_pv),s=3,label="Up-regulated",color="red")
+	plt.scatter(x=down_fc,y=down_pv,s=3,label="Down-regulated",color="blue")
+	plt.scatter(x=up_fc,y=up_pv,s=3,label="Up-regulated",color="red")
   
 	#Label names of differentially expressed genes up- or down regulated
 	for i in range(len(down_fc)):
-		if -np.log10(down_pv[i]) > 20:
+		if down_pv[i] > 20:
 			plt.text(x=down_fc[i],y=-np.log10(down_pv[i]),s=down_names[i],fontdict=dict(color='blue',size=6))
       
 	for i in range(len(up_fc)):
-		if -np.log10(up_pv[i]) > 20:
-			plt.text(x=up_fc[i],y=-np.log10(up_pv[i]),s=up_names[i],fontdict=dict(color='red',size=6))
+		if up_pv[i] > 20:
+			plt.text(x=up_fc[i],y=up_pv[i],s=up_names[i],fontdict=dict(color='red',size=6))
 
 	plt.xlabel("log2 fold change")
 	plt.ylabel("-log10 pvalue")
