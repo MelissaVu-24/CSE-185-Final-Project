@@ -34,7 +34,6 @@ def main():
 
 	#output file
 	if args.out is None:
-		if 
   		outf = sys.stdout
 	else: 
 		outf = open(args.out, "w")
