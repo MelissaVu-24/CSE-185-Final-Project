@@ -1,9 +1,9 @@
+import sys
 import pandas as pd
 import matplotlib.pylab as plt
 import seaborn as sns
 import numpy as np
 import math
-import sys
 import statistics
 
 def volcano(names, fold_change, pval, file):
