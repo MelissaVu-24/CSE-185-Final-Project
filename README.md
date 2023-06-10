@@ -15,7 +15,7 @@ If you do not have root access, instead use:
 
 The tool is installed in the folder shown during the installation
 
-To test that the tool runs use:
+To test that the tool is installed use:
 
   `diffana --help`
   
