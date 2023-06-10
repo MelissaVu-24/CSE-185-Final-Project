@@ -46,7 +46,7 @@ def volcano(names, fold_change, pval, file):
 	#Label names of differentially expressed genes up- or down regulated
 	for i in range(len(down_fc)):
 		if down_pv[i] > 20:
-			plt.text(x=down_fc[i],y=-np.log10(down_pv[i]),s=down_names[i],fontdict=dict(color='blue',size=6))
+			plt.text(x=down_fc[i],y=down_pv[i],s=down_names[i],fontdict=dict(color='blue',size=6))
       
 	for i in range(len(up_fc)):
 		if up_pv[i] > 20:
