@@ -52,6 +52,7 @@ def main():
 	linec = inputc.readlines()
 	linee = inpute.readlines()
 
+	#creating the counts lists
 	countsc = []
 	countse = []
 	for i in range(len(linec)-1):
@@ -111,39 +112,11 @@ def main():
 	sizefactore = utility.sizeFactor(countse)
 	meanc =  utility.meanCond(sizefactorc, countsc)
 	meane =  utility.meanCond(sizefactore, countse)
-	'''    
-	for i in countsc:
-		total = 0
-		for j in i:
-			total = total + j
-		mean = total/len(i)
-		meanc.append(mean)
-
-	for i in countse:
-		total = 0
-		for j in i:
-			total = total + j
-
-		mean = total/len(i)
-		meane.append(mean)
-	'''		
+		
 	# The variance of the data sets	
 	variancec = utility.varCond(sizefactorc, countsc, meanc)
 	variancee = utility.varCond(sizefactore, countse, meane)
-
-	'''
-	for i in range(len(countsc)):
-		variance = 0
-		for j in range(len(countsc[i])):
-			variance = variance + (countsc[i][j] - meanc[i]) ** 2
-		variancec.append(variance/((len(countsc)-1)))
-
-	for i in range(len(countse)):
-		for j in range(len(countse[i])):
-			variance = variance + (countse[i][j] - meane[i]) ** 2
-		variancee.append(variance/((len(countse)-1)))
-
-	'''		
+		
 	#Filling in the logfc
 	logfc =[]
 	
@@ -159,7 +132,7 @@ def main():
 	samplevare = utility.sampleVar(sizefactore, meane, variancee)
 	prob = []
 	
-	
+	#Calculating the probability
 	for i in range(len(samplevarc[1])):
 		if samplevarc[1][i] < samplevarc[0][i] and samplevare[1][i] < samplevare[0][i]:
 			#Negative Binomial Distribution probability of all genes
