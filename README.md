@@ -22,12 +22,12 @@ To test that the tool runs use:
 ## Basic Usage Instructions:
 The basic usage is:
 
-  `python diffana [--RSEMcon control.genes.results] [--RSEMexp experiment.genes.results] [other options]`
+  `diffana [--RSEMcon control.genes.results] [--RSEMexp experiment.genes.results] [other options]`
   
   
 To run diffana on test examples from files in this repo:
 
-  `python diffana --RSEMcon contest1.genes.results --RSEMcon contest2.genes.results --RSEMexp exptest1.genes.results --RSEMexp exptest2.genes.results` 
+  `diffana --RSEMcon contest1.genes.results --RSEMcon contest2.genes.results --RSEMexp exptest1.genes.results --RSEMexp exptest2.genes.results` 
   
 It should produce output like this:
 ```
