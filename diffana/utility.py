@@ -59,7 +59,21 @@ def volcano(names, fold_change, pval, file):
 
 	plt.legend()
 	plt.savefig(file)
+	
+def ERROR(msg):
+	"""
+	Prints the error message if there is a wrong entry
 
+	Parameters
+	----------
+	msg : str
+	
+	   the error to be printed
+	"""
+	
+	sys.stderr.write("ERROR: " +  "{msg}\n")
+	sys.exit(1)
+	
 def convertParameters(mean, variance):
 	'''
     	Parameters
