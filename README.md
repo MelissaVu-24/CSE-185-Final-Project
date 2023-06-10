@@ -38,9 +38,9 @@ It should produce output like this:
   
 ## diffana options:
     
-    *`--RSEMcon`: The Input files for the control. This option can be called multiple times. At least one file must be entered. Needs to be called at least twice
+    *`--RSEMcon`: The Input RSEM file for the control. This option can be called multiple times. At least one file must be entered. Needs to be called at least twice
     
-    *`--RSEMexp`: The Input files for the experimental. This option can be called multiple times. At least one file must be entered. Needs to be called at least twice
+    *`--RSEMexp`: The Input RSEM file for the experimental. This option can be called multiple times. At least one file must be entered. Needs to be called at least twice
 
     *`-o File`, `-out File`: Write the output to a file in the csv form. Default will print to stdout.
     
