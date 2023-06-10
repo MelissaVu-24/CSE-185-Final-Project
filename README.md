@@ -26,7 +26,7 @@ The basic usage is:
   
 To run diffana on test examples from files in this repo:
 
-  `python diffana --RSEMcon test1.genes.results --RSEMcon test3.genes.results --RSEMexp test2.genes.results --RSEMexp test4.genes.results` 
+  `python diffana --RSEMcon contest1.genes.results --RSEMcon contest2.genes.results --RSEMexp exptest1.genes.results --RSEMexp exptest2.genes.results` 
   
 It should produce output like this:
 ```
