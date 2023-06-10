@@ -10,9 +10,10 @@ def volcano(names, fold_change, pval, file):
 	Parameters
 	----------
 	names : str[]
-	fold_change : int[]
+		fold_change : int[]
 	pval : int[]
-	list of p-values
+		list of p-values
+	
 	Return
 	----------
 	Volcano Plot
@@ -61,23 +62,24 @@ def volcano(names, fold_change, pval, file):
 
 def convertParameters(mean, variance):
 	'''
-    Parameters
-    ----------
-    mean : int
-        the mean of the control dataset
+    	Parameters
+    	----------
+    	mean : int
+       	 	the mean of the control dataset
         
-    dispersion : int
-        the dispersion of the control dataset
+    	dispersion : int
+        	the dispersion of the control dataset
         
-    Returns
-    ----------
-    r: int
-        the converted binomial distribution parameter(number of successes)
+    	Returns
+    	----------
+    	r: int
+		the converted binomial distribution parameter(number of successes)
         
-    p: int
-        the converted binomial distribution parameter(probability of success)
-    n:int
-    	the converted binomial distribution parameter(total number of trials)
+    	p: int
+        	the converted binomial distribution parameter(probability of success)
+		
+    	n:int
+    		the converted binomial distribution parameter(total number of trials)
 	'''
 	if variance==0 and mean ==0:
 		return [0,0,0]
@@ -87,6 +89,17 @@ def convertParameters(mean, variance):
 	return [p,int(r),int(n)]
         
 def sizeFactor(counts):
+	'''
+	Parameters
+	------------
+	counts : 2D-array
+		the 2D-array containing arrays of counts for a gene in a condition
+		
+	Returns
+	-----------
+	sizefactor : array	
+		an array containing the size factor of each sample
+	'''
 	sizefactor = []
 	total = []
 	for gene in counts:
@@ -105,7 +118,20 @@ def sizeFactor(counts):
 	return sizefactor
 			
 def meanCond(sizefactor, counts):
-
+	'''
+	Parameters
+	------------
+	counts : 2D-array
+		the 2D-array containing arrays of counts for a gene in a condition
+		
+	sizefactor : array	
+		an array containing the size factor of each sample
+		
+	Returns
+	-----------
+	mean : array	
+		an array containing the adjusted means of the genes in one condition
+	'''
 	mean = []
 	for gene in counts:
 		total = 0
@@ -115,6 +141,23 @@ def meanCond(sizefactor, counts):
 	return mean
 			
 def varCond(sizefactor, counts, mean):
+	'''
+	Parameters
+	------------
+	counts : 2D-array
+		the 2D-array containing arrays of counts for a gene in a condition
+		
+	sizefactor : array	
+		an array containing the size factor of each sample
+		
+	mean : array	
+		an array containing the adjusted means of the genes in one condition
+		
+	Returns
+	-----------
+	var : array
+		array containing the raw variance of the genes in one condition
+	'''
 	w = []
 	z = []
 	for i in range(len(counts)):
@@ -134,6 +177,23 @@ def varCond(sizefactor, counts, mean):
 	return var		
 
 def sampleVar(sizefactor, mean, variance):
+	'''
+	Parameters
+	------------
+	counts : 2D-array
+		the 2D-array containing arrays of counts for a gene in a condition
+		
+	sizefactor : array	
+		an array containing the size factor of each sample
+		
+	variance : array
+		an array containing the raw variance of the genes in one condition
+		
+	Returns
+	-----------
+	[sampleVar, sampleMean] : 2D-array
+		an array containg sampleVar, the sum of the variance of the samples for one condition and sampleMean, the sum of the mean for one condition.
+	'''
 	sampleVar = []
 	sampleMean = []
 	for i in range(len(mean)):
