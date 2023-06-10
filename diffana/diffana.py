@@ -6,7 +6,6 @@ Similar to DESeq2
 
 import argparse
 import os
-import sys
 import math
 import numpy
 import pandas
